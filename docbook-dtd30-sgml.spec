@@ -2,9 +2,13 @@
 %define mltyp sgml
 %define sgmlbase %{_datadir}/sgml
 
-Name:			docbook-dtd30-sgml
-Version:		1.0
-Release:		5mdk
+%define name docbook-dtd30-sgml
+%define version 1.0
+%define release %mkrel 6
+
+Name:			%{name}
+Version:		%{version}
+Release:		%{release}
 Group:			Publishing
 
 Summary: SGML document type definition for DocBook %{dtdver}.
@@ -13,7 +17,7 @@ License:		Distributable
 URL:			http://www.oasis-open.org/docbook/
 
 Provides:		docbook-dtd-sgml
-Prereq:			sgml-common >= 0.6.3-2mdk
+Requires:		sgml-common >= 0.6.3-2mdk
 
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
