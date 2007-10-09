@@ -11,7 +11,7 @@ Version:		%{version}
 Release:		%{release}
 Group:			Publishing
 
-Summary: SGML document type definition for DocBook %{dtdver}.
+Summary: SGML document type definition for DocBook %{dtdver}
 
 License:		Distributable
 URL:			http://www.oasis-open.org/docbook/
