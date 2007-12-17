@@ -19,7 +19,6 @@ URL:			http://www.oasis-open.org/docbook/
 Provides:		docbook-dtd-sgml
 Requires:		sgml-common >= 0.6.3-2mdk
 
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 # Zip file downloadable at http://www.oasis-open.org/docbook/sgml/%{dtdver}/
 Source0:		docbk30.tar.bz2 
