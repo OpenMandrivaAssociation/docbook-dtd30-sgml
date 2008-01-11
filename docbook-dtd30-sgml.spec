@@ -4,7 +4,7 @@
 
 %define name docbook-dtd30-sgml
 %define version 1.0
-%define release %mkrel 6
+%define release %mkrel 7
 
 Name:			%{name}
 Version:		%{version}
