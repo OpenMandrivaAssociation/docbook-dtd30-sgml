@@ -42,20 +42,20 @@ This is the version %{dtdver} of this DTD.
 
 
 %install
-rm -rf %{buildroot}
-DESTDIR=%{buildroot}%{sgmlbase}/docbook/sgml-dtd-%{dtdver}
+rm -rf $RPM_BUILD_ROOT
+DESTDIR=$RPM_BUILD_ROOT%{sgmlbase}/docbook/sgml-dtd-%{dtdver}
 mkdir -p $DESTDIR
 install *.dcl $DESTDIR
 install docbook.cat $DESTDIR/catalog
 install *.dtd $DESTDIR
 install *.mod $DESTDIR
-mkdir -p %{buildroot}%{_sysconfdir}/sgml
-touch %{buildroot}%{_sysconfdir}/sgml/%{mltyp}-docbook-%{dtdver}.cat
-touch %{buildroot}%{_sysconfdir}/sgml/catalog
+mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/sgml
+touch $RPM_BUILD_ROOT%{_sysconfdir}/sgml/%{mltyp}-docbook-%{dtdver}.cat
+touch $RPM_BUILD_ROOT%{_sysconfdir}/sgml/catalog
 
 
 %clean
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 
 
 %files
@@ -125,3 +125,58 @@ if [ "$1" = "0" -a -x %{_bindir}/xmlcatalog ]; then
   fi
 fi
  
+
+
+%changelog
+* Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 1.0-12mdv2011.0
++ Revision: 663794
+- mass rebuild
+
+* Thu Dec 02 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0-11mdv2011.0
++ Revision: 604799
+- rebuild
+
+* Tue Mar 16 2010 Oden Eriksson <oeriksson@mandriva.com> 1.0-10mdv2010.1
++ Revision: 520684
+- rebuilt for 2010.1
+
+* Sun Aug 09 2009 Oden Eriksson <oeriksson@mandriva.com> 1.0-9mdv2010.0
++ Revision: 413362
+- rebuild
+
+* Sat Mar 21 2009 Funda Wang <fwang@mandriva.org> 1.0-8mdv2009.1
++ Revision: 359885
+- fix patchnum
+
+* Mon Jun 16 2008 Thierry Vignaud <tv@mandriva.org> 1.0-8mdv2009.0
++ Revision: 220668
+- rebuild
+
+* Fri Jan 11 2008 Thierry Vignaud <tv@mandriva.org> 1.0-7mdv2008.1
++ Revision: 149186
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+- fix summary-ended-with-dot
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sat Apr 28 2007 Adam Williamson <awilliamson@mandriva.org> 1.0-6mdv2008.0
++ Revision: 18830
+- clean spec; rebuild for new era
+
+
+* Tue Jan 10 2006 Frederic Crozat <fcrozat@mandriva.com> 1.0-5mdk
+- Rebuild
+
+* Thu Apr 22 2004 Frederic Crozat <fcrozat@mandrakesoft.com> 1.0-4mdk
+- Fix uninstall when xmlcatalog is no longer present
+
+* Mon Jul 21 2003 Frederic Crozat <fcrozat@mandrakesoft.com> - 1.0-3mdk
+- Mark some files has ghost configuration files
+- Fix typo in script
+- Fix upgrade script
+
+* Thu Jul 17 2003 Frederic Crozat <fcrozat@mandrakesoft.com> - 1.0-2mdk
+- Rebuild and use more macros
+
