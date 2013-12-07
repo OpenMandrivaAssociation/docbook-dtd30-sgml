@@ -5,7 +5,7 @@
 Summary:	SGML document type definition for DocBook %{dtdver}
 Name:		docbook-dtd30-sgml
 Version:	1.0
-Release:	14
+Release:	15
 Group:		Publishing
 License:	Distributable
 Url:		http://www.oasis-open.org/docbook/
