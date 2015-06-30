@@ -5,16 +5,16 @@
 Summary:	SGML document type definition for DocBook %{dtdver}
 Name:		docbook-dtd30-sgml
 Version:	1.0
-Release:	21
+Release:	22
 Group:		Publishing
 License:	Distributable
 Url:		http://www.oasis-open.org/docbook/
 # Zip file downloadable at http://www.oasis-open.org/docbook/sgml/%{dtdver}/
 Source0:	docbk30.tar.bz2 
 Patch0:		%{name}-%{version}.catalog.patch
-BuildArch:	noarch  
+BuildArch:	noarch
 Provides:	docbook-dtd-sgml
-Requires:	sgml-common >= 0.6.3-2mdk
+Requires(post,postun):	sgml-common >= 0.6.3-2mdk
 
 %description
 The DocBook Document Type Definition (DTD) describes the syntax of
@@ -23,7 +23,7 @@ This syntax is SGML-compliant and is developed by the OASIS consortium.
 This is the version %{dtdver} of this DTD.
 
 %prep
-%setup -q 
+%setup -q
 %apply_patches
 
 %build
@@ -37,12 +37,10 @@ install *.dtd $DESTDIR
 install *.mod $DESTDIR
 mkdir -p %{buildroot}%{_sysconfdir}/sgml
 touch %{buildroot}%{_sysconfdir}/sgml/%{mltyp}-docbook-%{dtdver}.cat
-touch %{buildroot}%{_sysconfdir}/sgml/catalog
 
 %files
 %doc *.txt
 %ghost %config(noreplace) %{_sysconfdir}/sgml/%{mltyp}-docbook-%{dtdver}.cat
-%ghost %config(noreplace) %{_sysconfdir}/sgml/catalog
 %{sgmlbase}/docbook/sgml-dtd-%{dtdver}
 
 %post
@@ -91,4 +89,4 @@ if [ "$1" = "0" -a -x %{_bindir}/xmlcatalog ]; then
 		  %{_datadir}/sgml/docbook/dsssl-stylesheets/catalog
   fi
 fi
- 
+
