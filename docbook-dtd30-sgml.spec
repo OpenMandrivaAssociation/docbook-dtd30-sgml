@@ -8,7 +8,7 @@ Version:	1.0
 Release:	25
 Group:		Publishing
 License:	Distributable
-Url:		http://www.oasis-open.org/docbook/
+Url:		https://www.oasis-open.org/docbook/
 # Zip file downloadable at http://www.oasis-open.org/docbook/sgml/%{dtdver}/
 Source0:	docbk30.tar.bz2 
 Patch0:		%{name}-%{version}.catalog.patch
